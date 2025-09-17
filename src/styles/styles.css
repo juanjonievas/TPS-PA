@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0d17; /* Fondo oscuro estilo SpaceX */
+  color: #e4e4e4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #111;
+}
+
+.Header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.Main {
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(auto, 1200px);
+}
+
+/* GRID de lanzamientos */
+.Launches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 10px;
+}
+
+.Launch-card {
+  background: #1e2132;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  animation: fade 1.5s ease;
+}
+
+.Launch-card:hover {
+  transform: translateY(-5px);
+}
+
+.Launch-card img {
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.Launch-card h2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
+/* Página de detalle */
+.Launch-detail {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.Launch-detail img {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+}
+
+.Launch-detail-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.Launch-detail-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.Launch-detail-info ul {
+  padding-left: 20px;
+}
+
+.Launch-detail-info li {
+  margin: 5px 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Loader */
+.Main-loading {
+  border: 4px solid #222;
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Fade in animation */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Página de error */
+.Error {
+  text-align: center;
+  padding: 40px;
+  color: #ff6b6b;
+  font-size: 18px;
+}
